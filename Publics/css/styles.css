@@ -34,6 +34,16 @@
     transition: width 0.5s, height 0.5s;
 }
 
+.titles{
+    color:#3991FE;
+    font-size:26px;
+    margin-bottom: 5px;
+}
+
+.btn{
+    background: #3991FE;
+}
+
 /* Logo cliente */
 
 .logo-client{
@@ -113,5 +123,9 @@ i.active {
     color: #3991FE;
 }
 
+/* option */
+ul.dropdown-content.select-dropdown li span {
+    color: #3991FE; /* no need for !important :) */
+}
 
 
