@@ -34,14 +34,14 @@
     transition: width 0.5s, height 0.5s;
 }
 
-.titles{
-    color:#3991FE;
-    font-size:26px;
-    margin-bottom: 5px;
-}
-
 .btn{
     background: #3991FE;
+}
+
+.titles{
+    color:#3991FE;
+    font-size:20px;
+    margin-bottom: 5px;
 }
 
 /* Logo cliente */

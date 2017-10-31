@@ -54,10 +54,10 @@ $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
                         <div class="input-field col s8 m4 l4">
                             <span>Tipo de Vinculación: </span>
                             <select id="listTipo">
-                                <option value="" disabled selected>Seleccione una Opción</option>
+                                <option value="0" disabled selected>Seleccione una Opción</option>
                             </select>
-                        </div>      
-
+                        </div>                             
+                                                
                         <div class="col s2 m4 l4">
                         </div>
                     </div> 

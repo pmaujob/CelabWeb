@@ -6,8 +6,6 @@ function onLoadBody() {
 
     document.getElementById('logoc').style.bottom = "0";
 
-    var listTipo = document.getElementById('listTipo');
-
     jQuery.ajax({
         type: 'POST',
         url: 'http://localhost/Celab/ManagementWS.php',
@@ -17,7 +15,7 @@ function onLoadBody() {
         success: function (respuesta) {
 
             if (respuesta != "MOD_ERROR") {
-                
+                                
                 var vitypes = JSON.parse(respuesta);
                 for (var i = 0; i < vitypes.length; i++) {
                     
@@ -39,30 +37,38 @@ function onLoadBody() {
         }
     });
 
-
 }
 
 function request() {
 
     var nDocument = document.getElementById('nDocument');
+    var opcionSeleccionada = document.getElementById('listTipo');
 
     if (nDocument.value.trim().length == 0) {
         alert('Debe ingresar un número de documento');
+        nDocument.focus();
         return;
     }
+    
+    if(opcionSeleccionada.value == 0){
+        alert('Debe seleccionar un tipo de documento');
+        opcionSeleccionada.focus();
+        return;
+    }
+    
 
     jQuery.ajax({
         type: 'POST',
-        url: 'http://localhost/Celab/ManagementWS.php',
+        url: 'http://localhost/Celab/CelabServices/ManagementWS.php',
         async: true,
-        data: {opModel: "MOD_SEARCH_DOCUMENT", document: nDocument.value},
+        data: {opModel: "MOD_SEARCH_DOCUMENT", document: nDocument.value, docType: opcionSeleccionada.value},
         timeout: 0,
         success: function (respuesta) {
 
             if (respuesta != "MOD_ERROR") {
 
-            } else {
-                alert('Modelo no encontrado');
+            } else {                
+                alert('Modelo no encontrado');                
             }
 
         }, error: function () {
