@@ -5,6 +5,7 @@ $_SESSION['asGenCerRootCw'] = dirname(__FILE__);
 $_SESSION['asGenCerRoothCw'] = 'http://' . $_SERVER['SERVER_NAME'] . '/CelabWeb';
 $asGenCerRootCw = $_SESSION['asGenCerRootCw'];
 $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,11 +20,31 @@ $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
         <script type="text/javascript" src="Publics/js/index.js"></script>
     </head>
     <body onload="onLoadBody();">
+
+        <div id="waitModal" class="modal modal-fixed-footer waitModal" data-keyboard="false" data-backdrop="static">
+            <div class="modal-content"> 
+                <div class="row center-align">
+                    <p>Buscando, por favor espere... </p>
+                    <div class="preloader-wrapper big active">
+                        <div class="spinner-layer spinner-blue-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div><div class="gap-patch">
+                                <div class="circle"></div>
+                            </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+            </div>
+        </div>
+
         <article>
             <section>                  
                 <div class="row">                    
                     <div class="col s12 m12 l12 center-align">
-                        <h1 class="titles">Certificados Electrónicos</h1>
+                        <h1 class="titles">Certificados Laborales</h1>
                     </div>                    
                 </div>
                 <div class="row">                    
@@ -32,7 +53,6 @@ $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
                     </div>                    
                 </div>                   
             </section>
-
             <section>
                 <form id='frmIndex' name='frmIndex'>
                     <div class="row">
@@ -57,7 +77,7 @@ $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
                                 <option value="0" disabled selected>Seleccione una Opción</option>
                             </select>
                         </div>                             
-                                                
+
                         <div class="col s2 m4 l4">
                         </div>
                     </div> 
@@ -73,6 +93,10 @@ $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
                         <div class="col s4 m4 l4">
                         </div>
                     </div>  
+
+                    <div id="lblError" class="row center-align hideControl">    
+                        <h2 class="titles red-text">No se encontró el documento ingresado</h2>
+                    </div>
 
                     <div class="row">
                         <div class="col m3 l4"></div>

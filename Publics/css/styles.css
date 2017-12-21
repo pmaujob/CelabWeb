@@ -44,6 +44,20 @@
     margin-bottom: 5px;
 }
 
+.frm-login form{
+    background-color: #FFFFFF;
+    border: solid #3990FE 1px;
+    padding: 36px;
+}
+
+.color-user{
+    color: #03A9F4;
+}
+
+.hideControl{
+    display:none;
+}
+
 /* Logo cliente */
 
 .logo-client{
@@ -126,6 +140,12 @@ i.active {
 /* option */
 ul.dropdown-content.select-dropdown li span {
     color: #3991FE; /* no need for !important :) */
+}
+
+.waitModal {
+    width: 25%;
+    max-height: 35%;
+    margin-top: 10%;
 }
 
 
