@@ -1,6 +1,5 @@
 <?php
 @session_start();
-
 $_SESSION['asGenCerRootCw'] = dirname(__FILE__);
 $_SESSION['asGenCerRoothCw'] = 'http://' . $_SERVER['SERVER_NAME'] . '/CelabWeb';
 $asGenCerRootCw = $_SESSION['asGenCerRootCw'];
@@ -87,6 +86,18 @@ if (!isset($_SESSION['contractData'])) {
                     </div>
                     <div class="col s1 m2 l2">
 
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4 m4 l4">
+                    </div>
+
+                    <div class="col s4 m4 l4 center-align">
+                        <a class="waves-effect waves-light btn light-blue blueb" onclick="generateCert();">Generar Certificado</a>
+                    </div>
+
+                    <div class="col s4 m4 l4">
                     </div>
                 </div>
             </section>
