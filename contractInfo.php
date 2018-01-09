@@ -60,6 +60,17 @@ if (!isset($_SESSION['contractData'])) {
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col s1 m2 l2">
+
+                    </div>
+                    <div class="col s10 m8 l8">
+                        <h2 class="titles blue-text">* Si falta información, por favor dirigirse a la entidad.</h2> 
+                    </div>
+                    <div class="col s1 m2 l2">
+
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col s12 m12 l12 center-align">
                         <h1 class="titles">Contratos</h1>
                     </div>
@@ -77,6 +88,7 @@ if (!isset($_SESSION['contractData'])) {
                                     <th class="center-align">Tipo</th>
                                     <th class="center-align">Fecha de Suscripción</th>
                                     <th class="center-align">Fecha de Terminación</th>
+                                    <th class="center-align">Seleccionar</th>
                                 </tr>
                             </thead>
                             <tbody id="contractTable">

@@ -1,11 +1,13 @@
 emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 contractorData = new Array();
-contractData = "";
+contractData = new Array();
+
 
 function onLoadBody(jsonContracts) {
 
     var nomGetted = false;
     var contractTable = document.getElementById("contractTable");
+    contractData = jsonContracts;
 
     for (var i = 0; i < jsonContracts.length; i++) {
         var obj = jsonContracts[i];
@@ -55,18 +57,26 @@ function onLoadBody(jsonContracts) {
         tdFect.className += "center-align";
         trAddition.appendChild(tdFect);
 
+        var tdSelect = document.createElement('td');
+        tdSelect.className += "center-align";
+        tdSelect.innerHTML = '<input type="checkbox" class="filled-in" id="CHK' + (i + 1) + '" data-index="' + i + '" checked="checked" />'
+                + '<label for="CHK' + (i + 1) + '"></label>';
+
+//        var chkSelect = document.createElement('input');
+//        chkSelect.type = "checkbox"
+//        chkSelect.className = "filled-in";
+//        chkSelect.id = "CHK" + (i + 1);
+//
+//        var lblChk = document.createElement('label');
+//        lblChk.for = "CHK" + (i + 1);
+//
+//        tdSelect.appendChild(chkSelect);
+//        tdSelect.appendChild(lblChk);
+
+        trAddition.appendChild(tdSelect);
         contractTable.appendChild(trAddition);
-
-        contractData += obj.num + "|";
-        contractData += obj.tip + "|";
-        contractData += obj.fecs + "|";
-        contractData += obj.fect + "|";
-        contractData += obj.val + "|";
-        contractData += obj.obj + "|";
-        contractData += obj.bd;
-
-        contractData += "@sltlnr";
     }
+
 }
 
 function generateCert() {
@@ -80,6 +90,35 @@ function generateCert() {
 
     if (emailId.value.trim() != "" && !emailRegex.test(emailId.value)) {
         alert("El email ingresado no es válido.");
+        return;
+    }
+
+    var contractString = "";
+    var contChk = 0;
+    for (var i = 0; i < contractData.length; i++) {
+
+        var contractObj = contractData[i];
+        var chk = document.getElementById('CHK' + (i + 1));
+
+        if (chk.checked) {
+            contractString += contractObj.num + "|";//0
+            contractString += contractObj.tip + "|";//1
+            contractString += contractObj.fecs + "|";//2
+            contractString += contractObj.fect + "|";//3
+            contractString += contractObj.val + "|";//4
+            contractString += contractObj.obj + "|";//5
+            contractString += contractObj.bd + "|";//6
+            contractString += contractObj.cod;//7
+
+            contractString += "@sltlnr";
+
+            contChk++;
+        }
+        
+    }
+
+    if (contChk == 0) {
+        alert("Debe seleccionar al menos un contrato para expedir el certificado.");
         return;
     }
 
@@ -108,7 +147,7 @@ function generateCert() {
     var dataInput = document.createElement("input");
     dataInput.type = "text";
     dataInput.name = "contractData";
-    dataInput.value = contractData;
+    dataInput.value = contractString;
     mapForm.appendChild(dataInput);
 
     document.body.appendChild(mapForm);
