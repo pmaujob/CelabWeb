@@ -21,7 +21,7 @@ $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
     </head>
     <body onload="onLoadBody();">
 
-        <div id="waitModal" class="modal modal-fixed-footer waitModal" data-keyboard="false" data-backdrop="static">
+        <div id="waitModal" class="modal modal-fixed-footer waitModal">
             <div class="modal-content"> 
                 <div class="row center-align">
                     <p>Buscando, por favor espere... </p>

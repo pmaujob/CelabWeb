@@ -5,7 +5,9 @@ function onLoadBody() {
     });
 
     $('.modal').modal();
-    $('#waitModal').modal({backdrop: 'static', keyboard: false});
+    $('#waitModal').modal({
+        dismissible: false
+    });
 
     document.getElementById('logoc').style.bottom = "0";
 

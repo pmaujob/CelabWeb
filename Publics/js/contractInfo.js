@@ -59,7 +59,7 @@ function onLoadBody(jsonContracts) {
 
         var tdSelect = document.createElement('td');
         tdSelect.className += "center-align";
-        tdSelect.innerHTML = '<input type="checkbox" class="filled-in" id="CHK' + (i + 1) + '" data-index="' + i + '" checked="checked" />'
+        tdSelect.innerHTML = '<input type="checkbox" class="filled-in checkbox-blue" id="CHK' + (i + 1) + '" checked="checked" />'
                 + '<label for="CHK' + (i + 1) + '"></label>';
 
 //        var chkSelect = document.createElement('input');
@@ -75,6 +75,7 @@ function onLoadBody(jsonContracts) {
 
         trAddition.appendChild(tdSelect);
         contractTable.appendChild(trAddition);
+        
     }
 
 }
