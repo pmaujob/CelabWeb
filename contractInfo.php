@@ -89,6 +89,7 @@ if (!isset($_SESSION['contractData'])) {
                                     <th class="center-align">Fecha de Suscripción</th>
                                     <th class="center-align">Fecha de Terminación</th>
                                     <th class="center-align">Seleccionar</th>
+                                    <th class="center-align">Adiciones</th>
                                 </tr>
                             </thead>
                             <tbody id="contractTable">
@@ -110,6 +111,15 @@ if (!isset($_SESSION['contractData'])) {
                     </div>
 
                     <div class="col s4 m4 l4">
+                    </div>
+                </div>
+
+                <div id="bModalAdds" class="modal bottom-sheet">
+                    <div class="modal-content">
+                        <h4>Adiciones</h4>
+                        <ul id="lstAdds" class="collection">
+                            
+                        </ul>
                     </div>
                 </div>
             </section>
