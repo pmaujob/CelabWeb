@@ -18,7 +18,7 @@ function onLoadBody() {
         data: {opModel: "MOD_VINCULATION_TYPE"},
         timeout: 0,
         success: function (respuesta) {
-
+                
             if (respuesta != "MOD_ERROR") {
 
                 var vitypes = JSON.parse(respuesta);

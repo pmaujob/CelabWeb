@@ -26,13 +26,13 @@ function onLoadBody(jsonContracts) {
             contractorData.push(obj.doc);
             document.getElementById("tdDoc").innerHTML = obj.doc;
             contractorData.push(obj.email);
-            document.getElementById("tdEmail").innerHTML = obj.email;
-            if (obj.email != null && obj.email != "") {
-                document.getElementById("divEmail").style.display = "none";
+            if (obj.email != null && obj.email.trim() != "") {
+                document.getElementById("tdEmail").innerHTML = obj.email;
             } else {
                 document.getElementById("tdEmail").style.display = "none";
+                document.getElementById("divEmailMsg").style.display = "none";
             }
-
+            contractorData.push(obj.bd);
         }
 
         var trContract = document.createElement('tr');
@@ -194,13 +194,13 @@ function getContractAdds(object) {
                                     + '<p>Periodo: ' + addObj.fecs + ' - ' + addObj.fecl + '<br>'
                                     + 'Valor: ' + addObj.val + '<p>';
 
-                        } else if ((object.dataBd == "siscon" && addObj.fecl != '1900-01-01') || 
+                        } else if ((object.dataBd == "siscon" && addObj.fecl != '1900-01-01') ||
                                 (object.dataBd != "siscon" && addObj.fecl != null && addObj.fecl.trim() != "")) {
 
                             liAdd.innerHTML = '<span class="title">Adición en tiempo</span>'
                                     + '<p>Periodo: ' + addObj.fecs + ' - ' + addObj.fecl + '<p>';
 
-                        } else if ((object.dataBd == "siscon" && addObj.val != '0') || 
+                        } else if ((object.dataBd == "siscon" && addObj.val != '0') ||
                                 (object.dataBd != "siscon" && addObj.val != null && addObj.val.trim() != "")) {
 
                             liAdd.innerHTML = '<span><strong>Adición en valor</strong></span>'
@@ -208,12 +208,17 @@ function getContractAdds(object) {
 
                         }
                         lstAdds.appendChild(liAdd);
-                        
+
                     }
 
                 }
 
-                $('#bModalAdds').modal('open');
+                if (adds.length == 0) {
+                    alert("El contrato no contiene adiciones.");
+                } else {
+                    $('#bModalAdds').modal('open');
+                }
+
 
             } else {
                 alert('Modelo no encontrado');

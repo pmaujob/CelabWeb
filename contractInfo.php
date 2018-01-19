@@ -50,7 +50,10 @@ if (!isset($_SESSION['contractData'])) {
                                     <div id="divEmail" class="input-field col s12">
                                         <input id="emailId" type="email" class="validate">
                                         <label for="emailId">Correo Electrónico</label>
-                                    </div>                                    
+                                    </div>  
+                                    <div id="divEmailMsg" class="col s12 left-align">
+                                        <span class="red-text">* Ingrese su email nuevamente si desea actualizarlo</span>
+                                    </div>                                  
                                 </div>
                             </form>
                         </div>
