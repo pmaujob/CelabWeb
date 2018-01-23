@@ -142,12 +142,6 @@ ul.dropdown-content.select-dropdown li span {
     color: #3991FE; /* no need for !important :) */
 }
 
-.waitModal {
-    width: 25%;
-    max-height: 35%;
-    margin-top: 10%;
-}
-
 /*Color checkbox*/
 .checkbox-blue[type="checkbox"].filled-in:checked + label:after{
      border: 2px solid #3991FE;

@@ -6,6 +6,8 @@ $_SESSION['asGenCerRoothCw'] = 'http://' . $_SERVER['SERVER_NAME'] . '/CelabWeb'
 $asGenCerRootCw = $_SESSION['asGenCerRootCw'];
 $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
 
+require_once $asGenCerRootCw . '/Config/SysConfig.php';
+
 ?>
 <!DOCTYPE html>
 <html>
