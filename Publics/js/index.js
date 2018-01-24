@@ -18,7 +18,7 @@ function onLoadBody() {
         data: {opModel: "MOD_VINCULATION_TYPE"},
         timeout: 0,
         success: function (respuesta) {
-                
+
             if (respuesta != "MOD_ERROR") {
 
                 var vitypes = JSON.parse(respuesta);
@@ -87,11 +87,41 @@ function request() {
                     mapForm.style.display = "none";
                     mapForm.target = "Map";
                     mapForm.method = "POST";
-                    mapForm.action = "contractInfo.php";
+
+                    switch (opcionSeleccionada.value) {
+
+                        case "V1":
+
+                            break;
+
+                        case "V2":
+
+                            break;
+
+                        case "V3":
+
+                            break;
+
+                        case "V4": //no pensionado
+
+                            mapForm.action = "noPensionerInfo.php";
+                            break;
+
+                        case "V5": //contratista
+
+                            mapForm.action = "contractInfo.php";
+                            break;
+
+                        default:
+
+                            alert("Error con el tipo de documento: " + opcionSeleccionada.value);
+                            return;
+
+                    }
 
                     var idInput = document.createElement("input");
                     idInput.type = "text";
-                    idInput.name = "contractData";
+                    idInput.name = "data";
                     idInput.value = respuesta;
                     mapForm.appendChild(idInput);
 
@@ -101,7 +131,6 @@ function request() {
                 }
 
             } else {
-
                 alert('Modelo no encontrado');
             }
 

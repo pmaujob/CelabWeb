@@ -11,20 +11,22 @@ if (!isset($_SESSION['data'])) {
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
+
+    <head>        
         <meta charset="UTF-8">
         <link rel="icon" href="http://xn--nario-rta.gov.co/inicio/images/32px.png" sizes="32x32">
         <title>Certificados Laborales</title>
-        <meta name="author" content="Mundo Linux">
+        <meta name="author" content="Mundo Linux">        
         <?php include_once $asGenCerRootCw . '/header.php'; ?>
-        <script type="text/javascript" src="Publics/js/contractInfo.js"></script>
+        <script type="text/javascript" src="Publics/js/noPensionerInfo.js"></script>
     </head>
     <body onload='onLoadBody(<?php echo $_SESSION['data']; ?>);'>
+
         <article>
             <section>                  
                 <div class="row">                    
                     <div class="col s12 m12 l12 center-align">
-                        <h1 class="titles">Certificados Laborales</h1>
+                        <h1 class="titles">Certificado No Pensionados</h1>
                     </div>                    
                 </div>          
             </section>
@@ -61,49 +63,7 @@ if (!isset($_SESSION['data'])) {
 
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2 l2">
-
-                    </div>
-                    <div class="col s10 m8 l8">
-                        <h2 class="titles blue-text">* Si falta información, por favor dirigirse a la entidad.</h2> 
-                    </div>
-                    <div class="col s1 m2 l2">
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m12 l12 center-align">
-                        <h1 class="titles">Contratos</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s1 m2 l2">
-
-                    </div>
-                    <div class="col s10 m8 l8">
-                        <table class="striped">
-                            <thead>
-                                <tr>
-                                    <th class="center-align">No.</th>
-                                    <th class="center-align">Número</th>
-                                    <th class="center-align">Tipo</th>
-                                    <th class="center-align">Fecha de Suscripción</th>
-                                    <th class="center-align">Fecha de Terminación</th>
-                                    <th class="center-align">Seleccionar</th>
-                                    <th class="center-align">Adiciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="contractTable">
-
-                            </tbody>                            
-                        </table>
-                    </div>
-                    <div class="col s1 m2 l2">
-
-                    </div>
-                </div>
+                </div>   
 
                 <div class="row">
                     <div class="col s4 m4 l4">
@@ -117,18 +77,8 @@ if (!isset($_SESSION['data'])) {
                     </div>
                 </div>
 
-                <div id="bModalAdds" class="modal bottom-sheet">
-                    <div class="modal-content">
-                        <h4>Adiciones</h4>
-                        <ul id="lstAdds" class="collection">
-                            
-                        </ul>
-                    </div>
-                </div>
             </section>
         </article>
-        <footer>
 
-        </footer>
     </body>
 </html>
