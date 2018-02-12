@@ -7,7 +7,6 @@ $asGenCerRootCw = $_SESSION['asGenCerRootCw'];
 $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
 
 require_once $asGenCerRootCw . '/Config/SysConfig.php';
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +18,7 @@ require_once $asGenCerRootCw . '/Config/SysConfig.php';
         <meta name="keywords" content="Certificados contratos Nariño, Certificados gobernación, Certificados Nariño, Certificado laboral, Certificación laboral, Certificados gobernación de nariño, Certificados de contratos">
         <meta name="description" content="Certificados Gobernación de Nariño">
         <?php include_once $asGenCerRootCw . '/header.php'; ?>
-        <script type="text/javascript" src="Publics/js/index.js"></script>
+        <script type="text/javascript" src="Views/js/index.js"></script>
     </head>
     <body onload="onLoadBody();">
 
@@ -39,6 +38,19 @@ require_once $asGenCerRootCw . '/Config/SysConfig.php';
                         </div>
                     </div>       
                 </div>
+            </div>
+        </div>
+
+        <div id="confirmModal" class="modal modal-fixed-footer confirmModal">
+            <div class="modal-content"> 
+                <h5 class="blue-text">Advertencia</h5>
+                <div class="row">
+                    <p id="confirmModalMessage">MSG</p>     
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modale" href="#!" class="modal-action waves-effect waves-green btn-flat " onclick="confirmModalOps(true);">Aceptar</a>
+                <a id="modalg" href="#!" class="modal-action waves-effect waves-green btn-flat " onclick="confirmModalOps(false);">Cancelar</a>
             </div>
         </div>
 

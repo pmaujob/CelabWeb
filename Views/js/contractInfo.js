@@ -84,7 +84,7 @@ function onLoadBody(jsonContracts) {
         }
 
         var aAddsIcon = document.createElement('img');
-        aAddsIcon.src = "../../CelabWeb/Publics/images/file_icon.png";
+        aAddsIcon.src = "../../Publics/images/file_icon.png";
         aAddsIcon.style.width = "50%";
         aAddsIcon.className += "icon-addition";
         aAdds.appendChild(aAddsIcon);

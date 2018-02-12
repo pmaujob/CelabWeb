@@ -77,7 +77,14 @@ function request() {
             if (respuesta != "MOD_ERROR") {
 
                 var contractData = JSON.parse(respuesta);
-                if (contractData.length == 0) {
+                if ((opcionSeleccionada.value == "V3" || opcionSeleccionada.value == "V4") && contractData.length == 0) {
+
+                    document.getElementById('confirmModalMessage').innerHTML = (opcionSeleccionada.value == "V3" ?
+                            "Usted NO ha sido encontrado como Pensionado en nuestros registros, ¿Le gustaría ir al formulario de registro para NO Pensionados?" :
+                            "Sus datos no fueron encontrados, ¿Le gustaría ir al formulario de registro para NO Pensionados?");
+                    $('#confirmModal').modal('open');
+
+                } else if (contractData.length == 0) {
 
                     document.getElementById('lblError').classList.remove("hideControl");
 
@@ -98,18 +105,19 @@ function request() {
 
                             break;
 
-                        case "V3":
+                        case "V3"://pensionado
 
+                            mapForm.action = "Views/Pensioner/pensionerInfo.php";
                             break;
 
                         case "V4": //no pensionado
 
-                            mapForm.action = "noPensionerInfo.php";
+                            mapForm.action = "Views/NoPensioner/noPensionerInfo.php";
                             break;
 
                         case "V5": //contratista
 
-                            mapForm.action = "contractInfo.php";
+                            mapForm.action = "Views/Contractor/contractInfo.php";
                             break;
 
                         default:
@@ -134,13 +142,23 @@ function request() {
                 alert('Modelo no encontrado');
             }
 
-            $('#waitModal').modal('close');
-
         }, error: function () {
             alert('Unexpected Error');
+        }, complete: function () {
             $('#waitModal').modal('close');
         }
     });
 
 
 }
+
+function confirmModalOps(accept) {
+
+    if (accept) {
+        location.href = "Views/NoPensioner/frmNoPensioner.php";
+    } else {
+        $('#confirmModal').modal('close');
+    }
+
+}
+

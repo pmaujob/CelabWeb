@@ -1,7 +1,5 @@
 <?php
 @session_start();
-$_SESSION['asGenCerRootCw'] = dirname(__FILE__);
-$_SESSION['asGenCerRoothCw'] = 'http://' . $_SERVER['SERVER_NAME'] . '/CelabWeb';
 $asGenCerRootCw = $_SESSION['asGenCerRootCw'];
 $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
 
@@ -17,7 +15,7 @@ if (!isset($_SESSION['data'])) {
         <title>Certificados Laborales</title>
         <meta name="author" content="Mundo Linux">
         <?php include_once $asGenCerRootCw . '/header.php'; ?>
-        <script type="text/javascript" src="Publics/js/contractInfo.js"></script>
+        <script type="text/javascript" src="../js/contractInfo.js"></script>
     </head>
     <body onload='onLoadBody(<?php echo $_SESSION['data']; ?>);'>
         <article>

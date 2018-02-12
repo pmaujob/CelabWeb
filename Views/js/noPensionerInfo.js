@@ -4,15 +4,16 @@ noPensionerData = new Array();
 function onLoadBody(jsonPerson) {
 
     $(document).ready(function () {
-
     });
 
     noPensionerData.push(jsonPerson[0].id);//0
     noPensionerData.push(jsonPerson[0].nom);//1
-    noPensionerData.push(jsonPerson[0].doc);//2
-    noPensionerData.push(jsonPerson[0].doctype);//3
-    noPensionerData.push(jsonPerson[0].sex);//4    
-    noPensionerData.push(jsonPerson[0].email);//5
+    noPensionerData.push(jsonPerson[0].tdes);//2
+    noPensionerData.push(jsonPerson[0].doc);//3
+    noPensionerData.push(jsonPerson[0].mdes);//4
+    noPensionerData.push(jsonPerson[0].ddes);//5
+    noPensionerData.push(jsonPerson[0].sex);//6
+    noPensionerData.push(jsonPerson[0].email);//7
 
     document.getElementById("tdName").innerHTML = jsonPerson[0].nom;
     document.getElementById("tdDoc").innerHTML = jsonPerson[0].doc;
@@ -29,7 +30,7 @@ function generateCert() {
 
     var emailId = document.getElementById("emailId");
 
-    if ((noPensionerData[5] == null || noPensionerData[5] == "") && emailId.value.trim() == "") {
+    if ((noPensionerData[7] == null || noPensionerData[7] == "") && emailId.value.trim() == "") {
         alert("Debe ingresar su correo electrónico.");
         return;
     }
@@ -39,8 +40,8 @@ function generateCert() {
         return;
     }
 
-    if ((noPensionerData[5] == null || noPensionerData[5] == "") || emailId.value != "") {
-        noPensionerData[5] = emailId.value;
+    if ((noPensionerData[7] == null || noPensionerData[7] == "") || emailId.value != "") {
+        noPensionerData[7] = emailId.value;
     }
 
     var mapForm = document.createElement("form");
