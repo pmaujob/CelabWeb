@@ -64,6 +64,8 @@ function request() {
 
     $('#waitModal').modal('open');
 
+    console.log(opcionSeleccionada.value);
+
     jQuery.ajax({
         type: 'POST',
         url: 'http://localhost/Celab/indexBoth.php',
@@ -71,8 +73,6 @@ function request() {
         data: {opModel: "MOD_SEARCH_CONTRACTOR", document: nDocument.value, docType: opcionSeleccionada.value},
         timeout: 0,
         success: function (respuesta) {
-
-            console.log(respuesta);
 
             if (respuesta != "MOD_ERROR") {
 
@@ -112,6 +112,7 @@ function request() {
 
                         case "V4": //no pensionado
 
+                            console.log(respuesta);
                             mapForm.action = "Views/NoPensioner/noPensionerInfo.php";
                             break;
 
@@ -129,7 +130,7 @@ function request() {
 
                     var idInput = document.createElement("input");
                     idInput.type = "text";
-                    idInput.name = "data";
+                    idInput.name = "personData";
                     idInput.value = respuesta;
                     mapForm.appendChild(idInput);
 
@@ -147,8 +148,8 @@ function request() {
         }, complete: function () {
             $('#waitModal').modal('close');
         }
-    });
 
+    });
 
 }
 

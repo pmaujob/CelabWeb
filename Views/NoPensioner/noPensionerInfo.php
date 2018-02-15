@@ -3,8 +3,8 @@
 $asGenCerRootCw = $_SESSION['asGenCerRootCw'];
 $asGenCerRoothCw = $_SESSION['asGenCerRoothCw'];
 
-if (!isset($_SESSION['data'])) {
-    $_SESSION['data'] = $_POST['data'];
+if (!isset($_SESSION['personData'])) {
+    $_SESSION['personData'] = $_POST['personData'];
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if (!isset($_SESSION['data'])) {
         <?php include_once $asGenCerRootCw . '/header.php'; ?>
         <script type="text/javascript" src="../js/noPensionerInfo.js"></script>
     </head>
-    <body onload='onLoadBody(<?php echo $_SESSION['data']; ?>);'>
+    <body onload='onLoadBody(<?php echo $_SESSION['personData']; ?>);'>
 
         <article>
             <section>                  
